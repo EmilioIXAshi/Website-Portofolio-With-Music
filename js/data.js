@@ -154,7 +154,7 @@ window.SITE = {
   /* Atur URL dan publishable key Supabase di sini untuk menyimpan masukan bersama. */
   feedback: {
     supabase: {
-      url: "jtlkqieeeqzxbsmuomzh.supabase.co",
+      url: "https://jtlkqieeeqzxbsmuomzh.supabase.co",
       publishableKey: "sb_publishable_qLjAMCZOXgp75wP9W_PA6w_77O7J5TN"
     },
     maxLength: 400,
