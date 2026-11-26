@@ -411,6 +411,17 @@
   /* ---------- Halaman ---------- */
   var pages = {};
   var pageTimer = null;
+  var menuCleanup = null;
+function loadScript(src) {
+  return new Promise(function (resolve, reject) {
+    if (window.mountInfiniteMenu) return resolve();
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
 
   pages.home = function () {
     var items = S.home.marquee.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
@@ -463,6 +474,28 @@
       '</div>' + foot();
     $$('.page-head .sub, .about, .foot').forEach(function (el) { el.classList.add('fx'); });
   };
+    pages.gallery = function () {
+  var photos = S.gallery.photos;
+  main.innerHTML = head(cur) +
+    '<section class="gallery-view" aria-label="Galeri foto">' +
+      '<div class="menu-host" id="menuHost"></div>' +
+    '</section>' + foot();
+  $$('.page-head .sub, .gallery-view, .foot').forEach(function (el) { el.classList.add('fx'); });
+
+  var host = $('#menuHost');
+  loadScript('js/infinite-menu.js').then(function () {
+    if (!host.isConnected) return; // pengunjung sudah pindah halaman
+    menuCleanup = window.mountInfiniteMenu(host, {
+      items: photos.map(function (p) {
+        return { image: p.image, title: p.title, description: p.description };
+      }),
+      theme: 'light',
+      accentColor: '#0e1a2b',
+      backgroundColor: '#fff',
+      autoplay: reduce ? 0 : 3
+    });
+  });
+};
 
   /* Karya ditahan: layar Coming soon, lalu kembali ke halaman sebelumnya */
   function comingSoon() {
@@ -671,6 +704,7 @@
   };
 
   function renderPage(target) {
+    if (menuCleanup) { menuCleanup(); menuCleanup = null; }
     if (pageTimer) { clearInterval(pageTimer); pageTimer = null; }
     if (pageId === 'feedback' && target.id !== 'feedback' && window.Feedback && window.Feedback.destroy) {
       window.Feedback.destroy();

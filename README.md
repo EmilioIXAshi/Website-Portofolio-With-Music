@@ -1,6 +1,6 @@
 # Portofolio
 
-Lima halaman: `index.html`, `tentang.html`, `karya.html`, `kontak.html`, `kritik-saran.html`. Navigasi internal tidak memuat ulang dokumen, baik di server maupun saat dibuka langsung dari disk (`file://`, alamat memakai `#`), jadi musik tidak pernah terputus.
+Enam halaman: `index.html`, `tentang.html`, `karya.html`, `gallery.html`, `kontak.html`, `kritik-saran.html`. Navigasi internal tidak memuat ulang dokumen, baik di server maupun saat dibuka langsung dari disk (`file://`, alamat memakai `#`), jadi musik tidak pernah terputus.
 
 **Transisi halaman**: tirai kolom dua lapis (gelap lalu warna halaman tujuan). Kecepatannya diatur lewat `COVER`, `REVEAL`, `STEP`, dan `INK` di `setupTransitions()` pada `js/app.js`; warna mengikuti `color` tiap halaman di `js/data.js`.
 
@@ -11,7 +11,7 @@ Lima halaman: `index.html`, `tentang.html`, `karya.html`, `kontak.html`, `kritik
 
 ## Yang kamu ubah
 - **Semua teks, proyek, tautan, dan warna halaman**: `js/data.js` (sudah dikomentari).
-- **Foto**: atur `home.photo` untuk foto Beranda dan `about.photo` untuk foto Tentang di `js/data.js`. Simpan file foto di folder `assets/` (rasio 4:5 paling pas), lalu isi jalur masing-masing, misalnya `assets/beranda.jpg` dan `assets/tentang.jpg`. Selama file belum ada, tampil placeholder.
+- **Foto**: atur `home.photo` untuk foto Beranda, `about.photo` untuk foto Tentang, dan daftar `gallery.photos` untuk Gallery di `js/data.js`. Simpan file foto di folder `assets/` (rasio 4:5 paling pas), lalu isi jalur masing-masing.
 - **Musik**: pemutar Béntang Sagara tersedia di semua halaman. Judul dan lokasi berkasnya dapat diatur lewat `music.title` dan `music.src` di `js/data.js`; berkas lagu bawaan ada di `music/bentang-sagara.mp3`. Musik dicoba diputar setelah layar pembuka mencapai 100% dan tetap berjalan saat berpindah halaman; posisi juga dipertahankan jika halaman dimuat ulang. Jika browser memblokir autoplay, pengunjung perlu menekan Putar.
 - **Layar pembuka**: `loader` di `js/data.js` (matikan dengan `enabled: false`). Setelah mencapai 100%, layar tertahan selama 2 detik sambil musik mulai.
 - Tampilan: `css/style.css`. Warna dasar ada di bagian `:root` paling atas.

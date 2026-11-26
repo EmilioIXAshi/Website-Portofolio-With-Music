@@ -40,6 +40,11 @@ window.SITE = {
       sub: "Setiap proyek saya tulis dari masalahnya dulu, baru hasilnya.",
       color: "#1f4fff", on: "#e8ecef",
       hint: "Proyek lengkap dengan masalah dan hasilnya" },
+    { id: "gallery", href: "gallery.html", label: "Gallery",
+      title: ["Potret", "teman-teman."],
+      sub: "Beberapa foto yang menyimpan cerita kecil.",
+      color: "#e355ff", on: "#0e1a2b",
+      hint: "Lihat foto-foto saya dalam galeri interaktif" },
     { id: "contact", href: "kontak.html", label: "Kontak",
       title: ["Mari", "bicara."],
       sub: "Gmail saya baca setiap pagi. Balasan biasanya datang dalam sehari.",
@@ -100,6 +105,18 @@ window.SITE = {
       { group: "Dipakai setiap hari", items: ["HTML", "CSS", "JavaScript", "Git", "Figma"] },
       { group: "Sedang dipelajari", items: ["GSAP", "TypeScript", "Aksesibilitas web"] },
       { group: "Di luar kode", items: ["Fotografi jalanan", "Main gitar", "Menulis musik"] }
+    ]
+  },
+
+  gallery: {
+    photos: [
+    { image: "assets/foto1.jpg", title: "Bersama Jakwan Otot", description: "Pada saat Jakwan main ke rumah saya, dan sweater juga kaos kakinya ketinggalan" },
+    { image: "assets/foto2.jpg", title: "Bersama Adan Eden Udun", description: "Ceritanya mau poto sendirian, eh si adan datang dengan posenya" },
+    { image: "assets/foto3.jpg", title: "Bersama Desvara Kamandaka", description: "Ceritanya lagi lomba lucu lucuan muka wkwkwkw" },
+    { image: "assets/foto4.jpg", title: "Bersama Ketua Fey", description: "Foto buat design canva" },
+    { image: "assets/foto5.jpg", title: "Bersama Bustop", description: "Waktu senggang saat ulangan di imobi" },
+    { image: "assets/foto6.jpg", title: "Bersama Yagsya", description: "Saat saat sebelum tes booklet kematian" },
+    { image: "assets/foto7.jpg", title: "Bersama Ajka", description: "Melompatlah yang tinggi, gapai cita-citamu setinggi langit, tetap semangat menjalani hari-hari, huhhh, kelass" }
     ]
   },
 
